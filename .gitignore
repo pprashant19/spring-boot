@@ -38,3 +38,5 @@ hs_err_pid*
 # Maven
 log/
 target/
+
+openshift.local.clusterup/
