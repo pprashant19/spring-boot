@@ -1,21 +1,20 @@
 package com.example.springboot;
 
-import java.util.Arrays;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@Slf4j
-public class Application implements CommandLineRunner {
+@RestController
+public class Application {
+
+  @RequestMapping("/")
+  public String home() {
+    return "Hello Docker World";
+  }
 
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
-  }
-
-  @Override
-  public void run(String... args) throws Exception {
-    log.info("args = " + Arrays.deepToString(args));
   }
 }
